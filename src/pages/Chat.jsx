@@ -31,9 +31,7 @@ export default function Chat() {
         e.target.message.value = ""
         setMessage([...message, {
             id: Date.now(),
-            message: msg,
-            creatAT:Date.now(),
-            user:user
+            message: msg
         }])
        
     }
@@ -55,13 +53,7 @@ export default function Chat() {
 
                 <div className='w-auto p-4 bg-white flex flex-col rounded-lg shadow-md max-w-[40%] ml-auto' key={e.id}>
                 <p>{e.message}</p>
-                <div className='mt-4 flex gap-2 items-center'>
-                    <img src={e.user.avatar} alt="" className='w-8 h-8'/>
-                    <div>
-                        <small>{e.user.username}</small>
-                        <small>{e.creatAT}</small>
-                    </div>
-                </div>
+                
                         </div>
                 )
             })}
